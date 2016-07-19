@@ -1,0 +1,19 @@
+{
+    "name": "kuzzle/kuzzle-symfony-bridge",
+    "description": "Symfony bridge bundle for Kuzzle PHP SDK",
+    "type": "library",
+    "license": "Apache 2.0",
+    "authors": [
+        {
+            "name": "asavoie",
+            "email": "asavoie@kaliop.com"
+        }
+    ],
+    "repositories": [
+      { "type": "vcs", "url": "git@github.com:kuzzleio/sdk-php.git" }
+    ],
+    "require": {
+        "kuzzleio/kuzzle-sdk": "dev-develop"
+    },
+    "minimum-stability": "dev"
+}

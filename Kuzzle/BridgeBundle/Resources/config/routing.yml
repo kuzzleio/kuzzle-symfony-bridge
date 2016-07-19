@@ -1,0 +1,3 @@
+kuzzle_bridge_homepage:
+    path:     /kuzzle_bridge
+    defaults: { _controller: KuzzleBridgeBundle:Default:index }

@@ -1,0 +1,9 @@
+parameters:
+    kuzzle_bridge.kuzzle.class: Kuzzle\BridgeBundle\Kuzzle\Kuzzle
+
+services:
+    kuzzle_bridge.kuzzle:
+        class: %kuzzle_bridge.kuzzle.class%
+        arguments:
+            - %kuzzle.host%
+            - %kuzzle.port%
