@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "30cd7613fbcd0097cce4949c9d09ecdf",
-    "content-hash": "60efff7c1a71d44f9e603a15aaa30433",
+    "hash": "04725fe06821dd612c47ae4f2624c0c9",
+    "content-hash": "f721eedbff1d3f377d62027d2d619587",
     "packages": [
         {
             "name": "kuzzleio/kuzzle-sdk",
@@ -37,6 +37,7 @@
                     "Kuzzle\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -49,10 +50,6 @@
             ],
             "description": "Official PHP SDK for Kuzzle",
             "homepage": "http://kuzzle.io",
-            "support": {
-                "issues": "https://github.com/kuzzleio/sdk-php/issues",
-                "source": "https://github.com/kuzzleio/sdk-php/tree/master"
-            },
             "time": "2016-07-18 14:50:05"
         },
         {

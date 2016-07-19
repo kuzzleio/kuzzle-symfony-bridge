@@ -9,9 +9,6 @@
             "email": "asavoie@kaliop.com"
         }
     ],
-    "repositories": [
-      { "type": "vcs", "url": "git@github.com:kuzzleio/sdk-php.git" }
-    ],
     "require": {
         "kuzzleio/kuzzle-sdk": "dev-master"
     }
