@@ -2,7 +2,7 @@
     "name": "kuzzle/kuzzle-symfony-bridge",
     "description": "Symfony bridge bundle for Kuzzle PHP SDK",
     "type": "library",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "asavoie",
