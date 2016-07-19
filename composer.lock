@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "336c6cf468cb2220abde43e332443e6a",
-    "content-hash": "20e219228a0cc39a15b473c34e2c5ca4",
+    "hash": "27271d98443cc88d4faabc31f0ab57ff",
+    "content-hash": "fa83d6b71afbb139b3f7a2dd943415de",
     "packages": [
         {
             "name": "kuzzleio/kuzzle-sdk",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kuzzleio/sdk-php.git",
-                "reference": "77d417397e288e0c6dd7ebf9810fac5baa089939"
+                "reference": "e87ceb728c3d761cb45afe0b01ee2a5548f9b93a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kuzzleio/sdk-php/zipball/77d417397e288e0c6dd7ebf9810fac5baa089939",
-                "reference": "77d417397e288e0c6dd7ebf9810fac5baa089939",
+                "url": "https://api.github.com/repos/kuzzleio/sdk-php/zipball/e87ceb728c3d761cb45afe0b01ee2a5548f9b93a",
+                "reference": "e87ceb728c3d761cb45afe0b01ee2a5548f9b93a",
                 "shasum": ""
             },
             "require": {
@@ -51,9 +51,9 @@
             "homepage": "http://kuzzle.io",
             "support": {
                 "issues": "https://github.com/kuzzleio/sdk-php/issues",
-                "source": "https://github.com/kuzzleio/sdk-php/tree/develop"
+                "source": "https://github.com/kuzzleio/sdk-php/tree/master"
             },
-            "time": "2016-07-18 14:49:47"
+            "time": "2016-07-18 14:50:05"
         },
         {
             "name": "paragonie/random_compat",
