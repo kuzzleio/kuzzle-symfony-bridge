@@ -1,5 +1,5 @@
 {
-    "name": "kuzzle/kuzzle-symfony-bridge",
+    "name": "kuzzleio/kuzzle-symfony-bridge",
     "description": "Symfony bridge bundle for Kuzzle PHP SDK",
     "type": "library",
     "license": "Apache-2.0",
