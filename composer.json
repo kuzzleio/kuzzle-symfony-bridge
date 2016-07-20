@@ -13,8 +13,8 @@
         "kuzzleio/kuzzle-sdk": "dev-master"
     },
     "autoload": {
-        "psr-4": {
-        "Kuzzle\\BridgeBundle\\": ""
+        "psr-0": {
+            "Kuzzle\\BridgeBundle": ""
         }
     }
 }
