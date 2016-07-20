@@ -11,5 +11,10 @@
     ],
     "require": {
         "kuzzleio/kuzzle-sdk": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+        "Kuzzle\\BridgeBundle\\": "Kuzzle/BridgeBundle/"
+        }
     }
 }
