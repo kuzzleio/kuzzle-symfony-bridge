@@ -4,26 +4,37 @@ namespace Kuzzle\BridgeBundle\Kuzzle;
 
 use \Kuzzle\Kuzzle as BaseKuzzle;
 
+/**
+ * Class Kuzzle
+ * @package Kuzzle\BridgeBundle\Kuzzle
+ */
 class Kuzzle extends BaseKuzzle
 {
+    /** @var string */
     protected $host;
 
+    /** @var integer */
     protected $port;
 
+    /**
+     * Kuzzle constructor.
+     * @param string $host
+     * @param integer $port
+     */
     public function __construct($host, $port)
     {
         $this->host = $host;
         $this->port = $port;
 
-        parent::__construct($host.':'.$port);
+        parent::__construct($host . ':' . $port);
     }
 
     /**
      * Create a document in Kuzzle from object implementing KuzzleDocumentInterface
      *
      * @param KuzzleDocumentInterface $document
-     * @param $index
-     * @param $collection
+     * @param string $index
+     * @param string $collection
      */
     public function create(KuzzleDocumentInterface $document, $index, $collection)
     {
@@ -33,11 +44,11 @@ class Kuzzle extends BaseKuzzle
     }
 
     /**
-     * * Create a document in Kuzzle from array
+     * Create a document in Kuzzle from array
      *
-     * @param $document array
-     * @param $index
-     * @param $collection
+     * @param array $document
+     * @param string $index
+     * @param string $collection
      */
     public function createDocument($document, $index, $collection)
     {
@@ -49,12 +60,12 @@ class Kuzzle extends BaseKuzzle
     /**
      * Retrieve a document from Kuzzle from his id
      *
-     * @param $documentId
-     * @param $index
-     * @param $collection
+     * @param string $documentId
+     * @param string $index
+     * @param string $collection
      * @return \Kuzzle\Document
      */
-    public function getDocument($documentId, $index,  $collection)
+    public function getDocument($documentId, $index, $collection)
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
@@ -64,11 +75,10 @@ class Kuzzle extends BaseKuzzle
     /**
      * Update a document in kuzzle from array
      *
-     *
-     * @param $documentId
-     * @param $document
-     * @param $index
-     * @param $collection
+     * @param string $documentId
+     * @param array $document
+     * @param string $index
+     * @param string $collection
      * @return \Kuzzle\Document
      */
     public function updateDocument($documentId, $document, $index, $collection)
@@ -85,7 +95,7 @@ class Kuzzle extends BaseKuzzle
      * @param $index
      * @param $collection
      */
-    public function deleteDocuments($filters, $index,  $collection)
+    public function deleteDocuments($filters, $index, $collection)
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
@@ -95,9 +105,9 @@ class Kuzzle extends BaseKuzzle
     /**
      * Perform a search in Kuzzle
      *
-     * @param $searchRequest
-     * @param $index
-     * @param $collection
+     * @param array $searchRequest
+     * @param string $index
+     * @param string $collection
      * @return \Kuzzle\Util\AdvancedSearchResult
      */
     public function search($searchRequest, $index, $collection)
