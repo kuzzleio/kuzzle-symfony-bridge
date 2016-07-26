@@ -35,12 +35,20 @@ class Kuzzle extends BaseKuzzle
      * @param KuzzleDocumentInterface $document
      * @param string $index
      * @param string $collection
+     * @return KuzzleDocumentInterface
      */
     public function create(KuzzleDocumentInterface $document, $index, $collection)
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        $kuzzleDataCollection->createDocument($document->toKuzzleDocument());
+        $serializedDocument = $kuzzleDataCollection->createDocument($document->toKuzzleDocument())->serialize();
+
+        return $document::fromKuzzleDocument(array_merge(
+            $serializedDocument['body'],
+            [
+                '_id' => $serializedDocument['_id']
+            ]
+        ));
     }
 
     /**
@@ -49,12 +57,13 @@ class Kuzzle extends BaseKuzzle
      * @param array $document
      * @param string $index
      * @param string $collection
+     * @return \Kuzzle\Document
      */
     public function createDocument($document, $index, $collection)
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        $kuzzleDataCollection->createDocument($document);
+        return $kuzzleDataCollection->createDocument($document);
     }
 
     /**
@@ -91,15 +100,16 @@ class Kuzzle extends BaseKuzzle
     /**
      * Delete all documents in Kuzzle matching filters
      *
-     * @param $filters
-     * @param $index
-     * @param $collection
+     * @param array $filters
+     * @param string $index
+     * @param string $collection
+     * @return integer|integer[]
      */
     public function deleteDocuments($filters, $index, $collection)
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        $kuzzleDataCollection->deleteDocument($filters);
+        return $kuzzleDataCollection->deleteDocument($filters);
     }
 
     /**
