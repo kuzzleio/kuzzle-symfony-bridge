@@ -35,20 +35,13 @@ class Kuzzle extends BaseKuzzle
      * @param KuzzleDocumentInterface $document
      * @param string $index
      * @param string $collection
-     * @return KuzzleDocumentInterface
+     * @return \Kuzzle\Document
      */
     public function create(KuzzleDocumentInterface $document, $index, $collection)
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        $serializedDocument = $kuzzleDataCollection->createDocument($document->toKuzzleDocument())->serialize();
-
-        return $document::fromKuzzleDocument(array_merge(
-            $serializedDocument['body'],
-            [
-                '_id' => $serializedDocument['_id']
-            ]
-        ));
+        return $kuzzleDataCollection->createDocument($document->toKuzzleDocument());
     }
 
     /**
