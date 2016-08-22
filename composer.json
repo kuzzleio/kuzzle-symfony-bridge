@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "kuzzleio/kuzzle-sdk": "dev-master"
+        "kuzzleio/kuzzle-sdk": "1.0.0"
     },
     "autoload": {
         "psr-0": {

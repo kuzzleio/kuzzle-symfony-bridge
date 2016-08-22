@@ -26,7 +26,7 @@ class Kuzzle extends BaseKuzzle
         $this->host = $host;
         $this->port = $port;
 
-        parent::__construct($host . ':' . $port);
+        parent::__construct($host, ['port' => $port]);
     }
 
     /**
