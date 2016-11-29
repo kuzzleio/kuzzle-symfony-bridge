@@ -35,13 +35,15 @@ class Kuzzle extends BaseKuzzle
      * @param KuzzleDocumentInterface $document
      * @param string $index
      * @param string $collection
+     * @param string $id document identifier
+     * @param array $options Optional parameters
      * @return \Kuzzle\Document
      */
-    public function create(KuzzleDocumentInterface $document, $index, $collection)
+    public function create(KuzzleDocumentInterface $document, $index, $collection, $id = '', array $options = [])
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        return $kuzzleDataCollection->createDocument($document->toKuzzleDocument());
+        return $kuzzleDataCollection->createDocument($document->toKuzzleDocument(), $id, $options);
     }
 
     /**
@@ -50,13 +52,15 @@ class Kuzzle extends BaseKuzzle
      * @param array $document
      * @param string $index
      * @param string $collection
+     * @param string $id document identifier
+     * @param array $options Optional parameters
      * @return \Kuzzle\Document
      */
-    public function createDocument($document, $index, $collection)
+    public function createDocument($document, $index, $collection, $id = '', array $options = [])
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        return $kuzzleDataCollection->createDocument($document);
+        return $kuzzleDataCollection->createDocument($document, $id, $options);
     }
 
     /**
@@ -65,13 +69,14 @@ class Kuzzle extends BaseKuzzle
      * @param string $documentId
      * @param string $index
      * @param string $collection
+     * @param array $options Optional parameters
      * @return \Kuzzle\Document
      */
-    public function getDocument($documentId, $index, $collection)
+    public function getDocument($documentId, $index, $collection, array $options = [])
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        return $kuzzleDataCollection->fetchDocument($documentId);
+        return $kuzzleDataCollection->fetchDocument($documentId, $options);
     }
 
     /**
@@ -81,13 +86,14 @@ class Kuzzle extends BaseKuzzle
      * @param array $document
      * @param string $index
      * @param string $collection
+     * @param array $options Optional parameters
      * @return \Kuzzle\Document
      */
-    public function updateDocument($documentId, $document, $index, $collection)
+    public function updateDocument($documentId, $document, $index, $collection, array $options = [])
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        return $kuzzleDataCollection->updateDocument($documentId, $document);
+        return $kuzzleDataCollection->updateDocument($documentId, $document, $options);
     }
 
     /**
@@ -96,13 +102,14 @@ class Kuzzle extends BaseKuzzle
      * @param array $filters
      * @param string $index
      * @param string $collection
+     * @param array $options Optional parameters
      * @return integer|integer[]
      */
-    public function deleteDocuments($filters, $index, $collection)
+    public function deleteDocuments($filters, $index, $collection, array $options = [])
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
 
-        return $kuzzleDataCollection->deleteDocument($filters);
+        return $kuzzleDataCollection->deleteDocument($filters, $options);
     }
 
     /**
@@ -111,12 +118,13 @@ class Kuzzle extends BaseKuzzle
      * @param array $searchRequest
      * @param string $index
      * @param string $collection
+     * @param array $options Optional parameters
      * @return \Kuzzle\Util\AdvancedSearchResult
      */
-    public function search($searchRequest, $index, $collection)
+    public function search($searchRequest, $index, $collection, array $options = [])
     {
         $kuzzleDataCollection = $this->dataCollectionFactory($collection, $index);
-        $searchResult = $kuzzleDataCollection->advancedSearch($searchRequest);
+        $searchResult = $kuzzleDataCollection->advancedSearch($searchRequest, $options);
 
         return $searchResult;
     }
